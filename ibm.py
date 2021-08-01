@@ -42,7 +42,7 @@ def camera():
         cv2.imwrite('4.jpg',img)
         with open('4.jpg', 'rb') as honda_file,open('4.jpg', 'rb') as dice_file:
             result = obj.analyze(
-                collection_ids=["71e1bb91-9b65-4946-a993-1c09b20b5570",'71e1bb91-9b65-4946-a993-1c09b20b5570'],
+                collection_ids=["17951ae7-0169-4551-ac19-a3864c7eed65",'17951ae7-0169-4551-ac19-a3864c7eed65'],
                 features=[AnalyzeEnums.Features.OBJECTS.value],
                 images_file=[
                     FileWithMetadata(honda_file),
@@ -61,6 +61,8 @@ def camera():
                         (left+width,top+height)
                         ,(255,0,0), 2)
             name = result['images'][0]['objects']['collections'][0]['objects'][0]['object']
+            with open('data.txt','r') as f:
+                f.write(str(name))
             cv2.putText(img,name,(left,top)
                         ,cv2.FONT_HERSHEY_SIMPLEX,1
                         ,(255,0,0), 2)

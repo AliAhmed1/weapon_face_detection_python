@@ -41,7 +41,7 @@ def camera():
     while True:
         success, img = cap.read()
         img = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
-        img = cv2.resize(img,(250,250))
+        img = cv2.resize(img,(1000,1000))
         cv2.imwrite('4.jpg',img)
         with open('4.jpg', 'rb') as honda_file,open('4.jpg', 'rb') as dice_file:
             result = obj.analyze(
@@ -67,6 +67,8 @@ def camera():
             cv2.putText(img,name,(left,top)
                         ,cv2.FONT_HERSHEY_SIMPLEX,1
                         ,(255,0,0), 2)
+            
+            #img = cv2.resize(img,(500,500))
             cv2.imshow('gasm', img)
             k = cv2.waitKey(30) & 0xff
             if k == 27: # press 'ESC' to quit

@@ -46,7 +46,7 @@ def findObjects(outputs,img):
         x, y, w, h = box[0], box[1], box[2], box[3]
         # print(x,y,w,h)
         cv.rectangle(img, (x, y), (x+w,y+h), (255, 0 , 255), 2)
-        cv.putText(img,f'{classNames[classIds[i]].upper()} {int(confs[i]*100)}%',
+        cv.putText(img,f'{classNames[classIds[i]].upper()} {int(confs[i]*100)}',
                   (x, y-10), cv.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)
         print(x,y,w,h)
     return img

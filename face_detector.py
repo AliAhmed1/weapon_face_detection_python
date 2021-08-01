@@ -3,7 +3,7 @@ import cv2
 import requests
 
 
-faceCascade = cv2.CascadeClassifier('haarcascade_face\haarcascade_frontalface2.xml')
+faceCascade = cv2.CascadeClassifier('haarcascade_face\cascade.xml')
 cap = cv2.VideoCapture(0)
 cap.set(3,640) # set Width
 cap.set(4,480) # set Height
